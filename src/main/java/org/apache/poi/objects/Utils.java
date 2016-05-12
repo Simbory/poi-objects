@@ -1,8 +1,7 @@
 package org.apache.poi.objects;
 
+import java.awt.*;
 import java.io.File;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 
 final class Utils {
     static String getFileExtension(String filePath) {
@@ -27,5 +26,20 @@ final class Utils {
 
     static void createDir(String path) {
         new File(path).mkdirs();
+    }
+
+    static Color convertStr2Color(String hex) {
+        if (hex == null || hex.length() < 1) {
+            return null;
+        }
+        if (hex.startsWith("#")) {
+            try{
+                return new Color(Integer.parseInt(hex.substring(1), 16));
+            } catch (Exception ex) {
+                return null;
+            }
+        } else {
+            return Color.getColor(hex);
+        }
     }
 }

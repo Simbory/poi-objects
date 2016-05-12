@@ -8,9 +8,9 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface POIObject {
-    public int headerRowIndex() default 0;
+    int headerRowIndex() default 0;
 
-    public int startIndex() default 1;
+    int startIndex() default 1;
 
-    public int endIndex() default -1;
+    int endIndex() default -1;
 }

@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface POIColumn {
-    public int index();
+    int index();
 
-    public String name();
+    String name() default "";
 }

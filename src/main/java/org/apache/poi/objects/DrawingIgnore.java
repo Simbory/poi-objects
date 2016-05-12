@@ -8,5 +8,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DrawingIgnore {
-    public boolean ignore() default true;
+    boolean ignore() default true;
 }

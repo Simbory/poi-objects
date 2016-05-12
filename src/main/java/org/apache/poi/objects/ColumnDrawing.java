@@ -3,7 +3,26 @@ package org.apache.poi.objects;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.usermodel.CellStyle;
 
+import java.lang.reflect.Method;
+
 public class ColumnDrawing {
+
+    private Font cellFont;
+
+    private String columnName;
+
+    private int columnIndex;
+
+    private int columnWidth;
+
+    private boolean alternate;
+
+    private CellStyle headerStyle;
+
+    private CellStyle cellStyle;
+    private CellStyle alternateCellStyle;
+    private Font alternateCellFont;
+    private Method method;
 
     public String getColumnName() {
         return columnName;
@@ -29,12 +48,12 @@ public class ColumnDrawing {
         this.columnWidth = columnWidth;
     }
 
-    public boolean isHasAlternate() {
-        return hasAlternate;
+    public boolean getAlternate() {
+        return alternate;
     }
 
-    public void setHasAlternate(boolean hasAlternate) {
-        this.hasAlternate = hasAlternate;
+    public void setAlternate(boolean alternate) {
+        this.alternate = alternate;
     }
 
     public void setHeaderStyle(CellStyle headerStyle) {
@@ -45,13 +64,43 @@ public class ColumnDrawing {
         return headerStyle;
     }
 
-    private String columnName;
+    public void setCellStyle(CellStyle cellStyle) {
+        this.cellStyle = cellStyle;
+    }
 
-    private int columnIndex;
+    public CellStyle getCellStyle() {
+        return cellStyle;
+    }
 
-    private int columnWidth;
+    public void setCellFont(Font cellFont) {
+        this.cellFont = cellFont;
+    }
 
-    private boolean hasAlternate;
+    public Font getCellFont() {
+        return cellFont;
+    }
 
-    private CellStyle headerStyle;
+    public void setAlternateCellStyle(CellStyle alternateCellStyle) {
+        this.alternateCellStyle = alternateCellStyle;
+    }
+
+    public CellStyle getAlternateCellStyle() {
+        return alternateCellStyle;
+    }
+
+    public void setAlternateCellFont(Font alternateCellFont) {
+        this.alternateCellFont = alternateCellFont;
+    }
+
+    public Font getAlternateCellFont() {
+        return alternateCellFont;
+    }
+
+    public void setMethod(Method method) {
+        this.method = method;
+    }
+
+    public Method getMethod() {
+        return method;
+    }
 }
